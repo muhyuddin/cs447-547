@@ -68,7 +68,12 @@ public class FileListServer {
 	}
 
 	private void loadFileList(){
-		File folder = new File(FILES_FOLDER);
+		final Path dir = Paths.get(PackLoader.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+
+		if(!Files.isDirectory(dir.resolve(FILES_FOLDER))){
+			return;
+		}
+		File folder = new File(dir.resolve(FILES_FOLDER));
 		File[] listOfFiles = folder.listFiles();
 		
 		if (listOfFiles!=null){

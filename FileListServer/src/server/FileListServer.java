@@ -76,8 +76,9 @@ public class FileListServer {
 		//if(!Files.isDirectory(dir.resolve(FILES_FOLDER))){
 		//	return;
 		//}
+		File folder = new File(FILES_FOLDER);
 		try{
-			File folder = new File(ClassLoader.getSystemClassLoader().getResource(FILES_FOLDER).toURI());
+			folder = new File(ClassLoader.getSystemClassLoader().getResource(FILES_FOLDER).toURI());
 		} catch (Exception e) {
  			e.printStackTrace();
 		}

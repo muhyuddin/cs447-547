@@ -24,6 +24,9 @@
 					<include>*.java</include>
 				</includes>
 			</resource>
+			<resource>
+				<directory>files</directory>
+			</resource>
 		</resources>
 
 		<plugins>

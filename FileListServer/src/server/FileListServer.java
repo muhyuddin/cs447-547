@@ -71,12 +71,12 @@ public class FileListServer {
 	}
 
 	private void loadFileList(){
-		final Path dir = Paths.get(PackLoader.class.getProtectionDomain().getCodeSource().getLocation().getPath());
-
-		if(!Files.isDirectory(dir.resolve(FILES_FOLDER))){
-			return;
-		}
-		File folder = new File(dir.resolve(FILES_FOLDER));
+		//final Path dir = Paths.get(PackLoader.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+		//ClassLoader.getSystemClassLoader().getResource(".").toURI()
+		//if(!Files.isDirectory(dir.resolve(FILES_FOLDER))){
+		//	return;
+		//}
+		File folder = new File(ClassLoader.getSystemClassLoader().getResource(FILES_FOLDER).toURI());
 		File[] listOfFiles = folder.listFiles();
 		
 		if (listOfFiles!=null){
